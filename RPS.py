@@ -73,9 +73,4 @@ else:
 
 
 
-# option_rock = option[0]
-# option_paper = option[1]
-# option_scissors = option[2]
-
-
 
