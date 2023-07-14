@@ -27,47 +27,24 @@ scissors = '''
 ---.__(___)
 '''
 
-#Write your code below this line 👇
-option = [rock,paper,scissors]
-player_input = input('What do you choose? Type 0 for rock, 1 for paper, 2 for Scissors')
-player_choice = int(player_input)
-computer_input = int(random.randint(0,len(option)-1))
+option_figures = [rock,paper,scissors]
+option_names = ['Rock','Paper','Scissors']
 
-player_option = option[int(player_input)]
-computer_option = option[int(computer_input)]
+player_input = int(input('What do you choose? Type 0 for rock, 1 for paper, 2 for Scissors.\nYour choice:'))
+computer_input = random.randint(0,len(option_names)-1)
 
-# if (player_option == option[1] and )
-if(player_option == option[1] and computer_option == option[0]):
-    print(f"{option[1]}")
-    print(f"{option[0]}")
-    print('Game over. Paper beats rock')
-elif(player_option == option[1] and computer_option == option[2]):
-    print(f"{option[1]}")
-    print(f"{option[2]}")
-    print('Game over. Scissors beats paper')
-elif(player_option == option[0] and computer_option == option[1]):
-    print(f"{option[0]}")
-    print(f"{option[1]}")
-    print('Game over. Paper beats rock')
-elif(player_option == option[0] and computer_option == option[2]):
-    print(f"{option[0]}")
-    print(f"{option[2]}")
-    print('Game over. Rock beats scissors')
-elif(player_option == option[2] and computer_option == option[0]):
-    print(f"{option[2]}")
-    print(f"{option[0]}")
-    print('Game over. Rock beats scissors')
-elif(player_option == option[2] and computer_option == option[1]):
-    print(f"{option[2]}")
-    print(f"{option[1]}")
-    print('Game over. Scissors beats paper')
-elif(player_option == computer_option):
-    print(f"{player_option}")
-    print(f"{computer_option}")
-    print('Draw. Try again')
-else:
-    print('You\'re out ob boundary')
-
+if player_input >= 0 and player_input <=2:
+    print(f'Player choose:\n {option_figures[player_input]}')
+    print(f'Computer choose:\n {option_figures[computer_input]}')
+    
+    if(player_input - computer_input)%3 == 1:
+        print(f'Game over.{option_names[player_input]} beats {option_names[computer_input]}')
+    elif(player_input == computer_input):
+        print(f'Draw. \n{option_names[player_input]} equal {option_names[computer_input]}.\nYou both choose equal figures. Please try again.')
+    else:
+        print(f'Game over. {option_names[computer_input]} beats {option_names[player_input]}')
+else: 
+    print('You have entered number too low or too high for me')
 
         
 
